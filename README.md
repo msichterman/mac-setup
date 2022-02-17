@@ -6,6 +6,21 @@ The commands and processes I run to setup a new Mac computer
 brew install git
 ```
 ```
+brew install yarn
+```
+```
+brew install prettier
+```
+```
+brew install python@3.10
+```
+```
+brew install elixir
+```
+```
+brew install --cask phoenix
+```
+```
 brew install --cask google-chrome
 ```
 ```
@@ -16,6 +31,9 @@ brew install --cask pycharm
 ```
 ```
 brew install --cask docker
+```
+```
+brew install --cask dotnet
 ```
 ```
 brew install --cask lastpass
@@ -53,6 +71,9 @@ brew install --cask miro
 ```
 brew install --cask canva
 ```
+```
+brew install --cask robo-3t
+```
 
 ## Node
 Download Node Version Manager (NVM) to download and manage Node versions.
@@ -64,3 +85,8 @@ Once that installs, run the following command:
 ```
 nvm install stable
 ```
+
+## Setup GitHub SSH/GPG Key
+TODO
+
+
