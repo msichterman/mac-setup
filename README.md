@@ -86,6 +86,17 @@ Once that installs, run the following command:
 nvm install stable
 ```
 
+## Bash
+Create and open bash profile
+```
+touch ~/.bash_profile
+```
+```
+open -a TextEdit.app ~/.bash_profile
+```
+
+Head over to wherever you save your custom config and copy it into TextEdit and save.
+
 ## Setup GitHub SSH/GPG Key
 TODO
 
