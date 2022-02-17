@@ -50,6 +50,9 @@ brew install --cask figma
 ```
 brew install --cask miro
 ```
+```
+brew install --cask canva
+```
 
 ## Node
 Download Node Version Manager (NVM) to download and manage Node versions.
