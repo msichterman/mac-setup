@@ -77,6 +77,9 @@ brew install --cask canva
 ```
 brew install --cask robo-3t
 ```
+```
+brew install --cask rocket
+```
 
 ## Node
 Download Node Version Manager (NVM) to download and manage Node versions.
