@@ -137,71 +137,65 @@ to validate your installation. Your validation should look like (or newer):
 ```
 gpg --full-generate-key
 ```
+   * At the prompt, specify option 4, "RSA (sign only), and press Enter.
+   * At the prompt, specify 4096 as the key size, press Enter.
+   * At the prompt, specify 1y as the the length of time the key should be valid, press Enter.
+   * At the prompt, press Enter to leave the comment blank.
 
-9. At the prompt, specify option 4, "RSA (sign only), and press Enter.
+9. Verify that your selections are correct.
 
-10. At the prompt, specify 4096 as the key size, press Enter.
+10. Enter your user ID information, which should be your real name (ie FirstName LastName).
 
-11. At the prompt, specify 1y as the the length of time the key should be valid, press Enter.
+11. Enter your Hudl email address that is verified in Github.
+12. Enter a new passphrase. Keep your secret key secret.
+   * Keep both the key and your password in a secure location (e.g. a password manager like `LastPass`), and don't lose it.
 
-
-At the prompt, press Enter to leave the comment blank.
-Verify that your selections are correct.
-
-Enter your user ID information, which should be your real name (ie FirstName LastName).
-
-Enter your Hudl email address that is verified in Github.
-Enter a new passphrase. Keep your secret key secret.
-Keep both the key and your password in a secure location (e.g. a password manager), and don't lose it.
-Open Finder and navigate to {location} and check to see if you have a gpg.conf file
-If the file does not exist, create it using a text editor and renaming the file with a .conf
-Add the following two lines to your ~/.gnupg/gpg.conf file.
-
-~/.gnupg/gpg.conf
+13. Open Finder and navigate to {location} and check to see if you have a gpg.conf file
+   * If the file does not exist, create it using a text editor and renaming the file with a .conf
+ 
+14. Add the following two lines to your `~/.gnupg/gpg.conf` file.
+```
 no-tty
 use-agent
-Add the public GPG key to your GitHub account https://docs.github.com/en/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account
-Note: Go through steps 11-14 in "generated your GPG key" (noted in step 4 of the guide above) to generate the actual key
-Follow the steps in this guide https://docs.github.com/en/github/authenticating-to-github/telling-git-about-your-signing-key
-In Terminal, run git config --global commit.gpgsign true to instruct git to sign all of your commits automatically.
-Go to this page and scroll down to 'Method 2 - GPG Suite' and follow the instructions https://github.com/pstadler/keybase-gpg-github#optional-in-case-youre-prompted-to-enter-the-password-every-time
-The last step, where you modify ~/.gnupg/gpg-agent.conf should not be necessary. You can cat this file to confirm it has the right contents, though.
-It may be desirable to increase the time your password is remembered in the preferences window. 86400 is recommended as this is the number of seconds in a 24 hour period.
-Update your environment (Terminal) 
+```
 
+15. Add the public GPG key to your [GitHub account](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account)
+   * Note: Go through steps 11-14 in "generated your GPG key" (noted in step 4 of the guide above) to generate the actual key
+
+16. Follow the steps in [this guide](https://docs.github.com/en/github/authenticating-to-github/telling-git-about-your-signing-key)
+
+17. In Terminal, run `git config --global commit.gpgsign true` to instruct git to sign all of your commits automatically.
+
+18. Run the following command to do some cleanup:
+```
+brew uninstall pinentry-mac
+```
+
+19. Now install the GPG Suite versions
+```
+brew install --cask gpg-suite
+```
+
+20. Once installed, open Spotlight and search for "GPGPreferences", or open system preferences and select "GPGPreferences"
+
+21. Select the Default Key if it is not already selected, and ensure "Store in OS X Keychain" is checked:
+![photo](https://github.com/pstadler/keybase-gpg-github/blob/master/img/gpg-preferences.png)
+
+22. Update your environment (Terminal):
+```
 nano ~/.bash_profile
-And then Add the following line
+```
 
+   * And then Add the following line
+
+```
 GPG_TTY=$(tty)
 export GPG_TTY
-And then exit out of the editor (^X) and save the document (Y)
+```
 
-And run this command:
+   * And then exit out of the editor (^X) and save the document (Y)
 
+   * And run this command:
+```
 source ~/.bash_profile
-Note: If you have issues inserting the two like into .bash_profile using nano, insert the two lines manually
-
-Run: gpgconf --kill gpg-agent
-Create ssh key by following the steps:
-Run: ssh-keygen -t ed25519 -C "<your email>"
-press return when asked "Enter file in which to save the key"
-press return when asked "Enter passphrase" and "Enter same passphrase again"
-Run: ls ~/.ssh
-confirm id_ed25519.pub is present
-Run: pbcopy < id_ed25519.pub
-copies the file into clipboard
-Add the SSH key into Github
-Navigate to SSH and GPG tab in Github (you can refer to step 16 to find the tab)
-Select "New SSH key"
-Paste the SSH key (pressing Command+v should work as you copied the key into clipboard in previous step)
-Configure SSO → Authorize
-Restart your IDE (e.g. Pycharm, VS Code, etc.)
-If you try to commit via IDE, it may fail until you have entered your password.
-Commit via command line, (e.g. commit -m 'whatever message for your commit')
-This should prompt you to enter your password. After this your IDE integration should work, and future command line commits should not prompt you for your password.
-Make sure your terminal is not small when committing. If your terminal is too small you cannot be prompted for your password and the signing will fail without giving a helpful error message.
-Commit and push to GitHub - you should see a green Verified next to the commit with your GPG Key ID below.
-
-
-
-
+```
