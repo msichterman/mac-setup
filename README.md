@@ -200,3 +200,20 @@ export GPG_TTY
 source ~/.bash_profile
 ```
 
+23. Run:
+```
+gpgconf --kill gpg-agent
+```
+
+### Setup SSH
+Create ssh key by following the steps:
+1. Run: `ssh-keygen -t ed25519 -C "<your email>"`
+2. Press <kbd>Return</kbd> when asked "Enter file in which to save the key"
+3. Press <kbd>Return</kbd> when asked "Enter passphrase" and "Enter same passphrase again"
+4. Run: `ls ~/.ssh` and confirm `id_ed25519.pub` is present
+5. Run: `pbcopy < ls ~/.ssh/id_ed25519.pub` which copies the file into your clipboard
+6. Add the SSH key into Github:
+   * Navigate to SSH and GPG tab in Github
+   * Select "New SSH key"
+   * Paste the SSH key (pressing <kbd>Command</kbd> + <kbd>V</kbd> should work as you copied the key into clipboard in previous step)
+   * Configure SSO → Authorize
