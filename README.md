@@ -15,6 +15,9 @@ brew install prettier
 brew install python
 ```
 ```
+brew install awscli
+```
+```
 brew install gnupg
 ```
 ```
