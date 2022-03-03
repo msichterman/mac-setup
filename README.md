@@ -12,7 +12,7 @@ brew install yarn
 brew install prettier
 ```
 ```
-brew install python@3.10
+brew install python
 ```
 ```
 brew install gnupg
