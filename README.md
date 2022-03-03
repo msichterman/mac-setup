@@ -176,8 +176,6 @@ GPG_TTY=$(tty)
 export GPG_TTY
 And then exit out of the editor (^X) and save the document (Y)
 
-
-
 And run this command:
 
 source ~/.bash_profile
