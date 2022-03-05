@@ -2,6 +2,12 @@
 The commands and processes I run to setup a new Mac computer
 
 ## Homebrew Setup
+First, install Homebrew:
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Install the following as needed:
 ```
 brew install git
 ```
