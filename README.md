@@ -155,7 +155,7 @@ gpg --full-generate-key
 
 10. Enter your user ID information, which should be your real name (ie FirstName LastName).
 
-11. Enter your Hudl email address that is verified in Github.
+11. Enter your email address that is verified in Github.
 12. Enter a new passphrase. Keep your secret key secret.
    * Keep both the key and your password in a secure location (e.g. a password manager like `LastPass`), and don't lose it.
 
