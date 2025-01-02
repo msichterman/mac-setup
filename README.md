@@ -123,7 +123,6 @@ git config --global user.email msichterman1@gmail.com
 ### Configure GPG Commit Signing
 1. Log into [GitHub](github.com)
 2. Click on your setting under your profile in the top right corner.
-![image](https://user-images.githubusercontent.com/38794918/154547859-493d19fc-4aa3-430b-91d3-37fa15de4b74.png)
 4. Find your GitHub email address in your Account Settings under the Emails menu option.
     * If it is private this will be someone@user.noreply.github.com.
     * If your email is verified, it will have a green Primary next to your email address and skip to step 5.
